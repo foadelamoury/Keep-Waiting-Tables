@@ -2,14 +2,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+
+    [SerializeField] float movementSpeed = 5f;
+    private void Start()
+    {
+
+    }
     private void Update()
     {
-        Vector2 inputVector = new Vector2(0,0);
-       
+        Vector2 inputVector = new Vector2(0, 0);
+
         PlayerInput(inputVector);
     }
 
-    private static void PlayerInput(Vector2 inputVector)
+    private void PlayerInput(Vector2 inputVector)
     {
         if (Input.GetKey(KeyCode.W))
         {
@@ -28,6 +35,9 @@ public class PlayerController : MonoBehaviour
         {
             inputVector.x = 1;
         }
-        inputVector.Normalize();
+        // Normalize the input vector to ensure consistent movement speed in all directions (especially diagonally)
+        inputVector.Normalize(); //or inputVector = inputVector.normalized;
+        Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
+        transform.position += moveDir * Time.deltaTime * movementSpeed;
     }
 }
