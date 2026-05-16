@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.01
   subtype: kitchenchaos
-  lastShownTimestamp: 1778847492
+  lastShownTimestamp: 1778943374
   lastUpdateResponse:
     version: 1.01
     versionUrl: https://unitycodemonkey.com
-  checkedLastUpdateTimestamp: 1778924599
+  checkedLastUpdateTimestamp: 1778943374
   lastQOTDResponse:
     questionId: 302
     questionText: 'Is this valid code?
@@ -29,7 +29,7 @@ MonoBehaviour:
     answerC: 
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1778924599
+  lastQotdTimestamp: 1778943374
   lastDynamicHeaderResponse:
     topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/unityBundleMay26MustHave.png
     topText: The BEST Unity Bundle in ages! Includes my most recommended asset 94%
@@ -37,11 +37,11 @@ MonoBehaviour:
     topLink: assetstore
     bottomText: Get 98% OFF on awesome REALISTIC HumbleBundle!
     bottomLink: humblebundle
-  lastDynamicHeaderTimestamp: 1778924599
+  lastDynamicHeaderTimestamp: 1778943374
   websiteLatestMessage:
     text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
       Click here!</a>
-  websiteLatestMessageTimestamp: 1778924599
+  websiteLatestMessageTimestamp: 1778943374
   websiteLatestVideos:
     videos:
     - youTubeId: Fb5d_46JfVI
@@ -53,4 +53,4 @@ MonoBehaviour:
         (Learn by DOING!)
     - youTubeId: 546J2n9Sn5o
       title: The MOST AWESOME Unity Bundle is HERE! 94% OFF!
-  websiteLatestVideosTimestamp: 1778924599
+  websiteLatestVideosTimestamp: 1778943374
