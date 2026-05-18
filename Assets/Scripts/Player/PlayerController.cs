@@ -5,6 +5,10 @@ public class PlayerController : MonoBehaviour
 
 
     [SerializeField] float movementSpeed = 5f;
+    [SerializeField] float rotationSpeed = 5f;
+
+    bool isWalking;
+
     private void Start()
     {
 
@@ -39,5 +43,12 @@ public class PlayerController : MonoBehaviour
         inputVector.Normalize(); //or inputVector = inputVector.normalized;
         Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
         transform.position += moveDir * Time.deltaTime * movementSpeed;
+        
+        isWalking = moveDir != Vector3.zero;
+        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotationSpeed);
+    }
+    public bool IsWalking()
+    {
+        return isWalking;
     }
 }
