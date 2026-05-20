@@ -5,6 +5,7 @@ public class ClearCounter : MonoBehaviour
 
     public void Interact()
     {
-            Debug.Log("Interact");
+        
+        Logging.LogPlayer("Interact");
     }
 }

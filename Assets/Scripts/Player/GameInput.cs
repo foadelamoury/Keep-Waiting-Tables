@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class GameInput : MonoBehaviour
 {
+    public event EventHandler OnInteractAction;
     private PlayerInputActions playerInputActions;
     
 
@@ -9,12 +11,23 @@ public class GameInput : MonoBehaviour
     {
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
+
+        playerInputActions.Player.Interact.performed += Interacting;
     }
+
+    private void Interacting(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        
+        OnInteractAction?.Invoke(this,EventArgs.Empty);
+    }
+
     public Vector2 GetMovementVectorNormalized()
     {
         Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
         
         
+
+
         return PlayerInput(inputVector);
 
     }

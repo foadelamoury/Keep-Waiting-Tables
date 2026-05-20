@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] float rotationSpeed = 5f;
     [SerializeField] GameInput gameInput;
+    [SerializeField] LayerMask countersLayerMask;
+
 
     bool isWalking;
 
@@ -14,8 +16,34 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-
+        gameInput.OnInteractAction += GameInput_OnInteractAction;
     }
+
+    private void GameInput_OnInteractAction(object sender, System.EventArgs e)
+    {
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+
+        Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
+
+        if (moveDir != Vector3.zero)
+        {
+            lastInteractDir = moveDir;
+        }
+
+        float interactDistance = 2f;
+
+        if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, countersLayerMask))
+        {
+            if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
+            {
+
+                // Has ClearCounter
+                clearCounter.Interact();
+
+            }
+        }
+    }
+
     private void Update()
     {
 
@@ -42,9 +70,13 @@ public class PlayerController : MonoBehaviour
 
         float interactDistance = 2f;
 
-        if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance))
+        if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, countersLayerMask))
         {
-            if(raycastHit.transform.TryGetComponent(out ClearCounter clearCounter)){ 
+            if(raycastHit.transform.TryGetComponent(out ClearCounter clearCounter)){
+
+                // Has ClearCounter
+                //clearCounter.Interact();
+                
             }
         }
     }
