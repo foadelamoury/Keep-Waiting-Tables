@@ -14,59 +14,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.01
   subtype: kitchenchaos
-  lastShownTimestamp: 1779263066
+  lastShownTimestamp: 1780904957
   lastUpdateResponse:
     version: 1.01
     versionUrl: https://unitycodemonkey.com
-  checkedLastUpdateTimestamp: 1779263066
+  checkedLastUpdateTimestamp: 1780904957
   lastQOTDResponse:
-    questionId: 303
-    questionText: 'When would this code cause an error?
-
-      <p>Building closest
-      = null;</p>
-
-      <p>for (int i = 0; i &lt; instanceList.Count; i++) {</p>
-
-      <p>&nbsp;
-      &nbsp; if (Vector3.Distance(position, instanceList[i].GetPosition()) &lt; Vector3.Distance(position,
-      closest.GetPosition())) {</p>
-
-      <p>&nbsp; &nbsp; &nbsp; &nbsp; closest
-      = instanceList[i];</p>
-
-      <p>&nbsp; &nbsp; }</p>
-
-      <p>}</p>
-
-      <p>return
-      closest;</p>'
-    answerA: When instanceList is empty
-    answerB: When instanceList has at least one element
-    answerC: When instanceList has exactly two elements
+    questionId: 309
+    questionText: If you add the attribute [ExecuteInEditMode] to a MonoBehaviour
+      class, how often will Update be called?
+    answerA: Refresh rate of the monitor
+    answerB: When modifying something
+    answerC: Framerate shown in Game - Stats window
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1779263066
+  lastQotdTimestamp: 1780904957
   lastDynamicHeaderResponse:
-    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/unityBundleMay26MustHave.png
-    topText: The BEST Unity Bundle in ages! Includes my most recommended asset 94%
-      OFF!
-    topLink: assetstore
-    bottomText: Get 98% OFF on awesome REALISTIC HumbleBundle!
-    bottomLink: humblebundle
-  lastDynamicHeaderTimestamp: 1779263066
+    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/humbleJun26Synty.png
+    topText: Synty is BACK with a HumbleBundle 95% OFF! Don't miss this one!
+    topLink: humblebundle
+    bottomText: My 10+ Years of C# Knowledge in 1 Course!
+    bottomLink: csharpcourse
+  lastDynamicHeaderTimestamp: 1780904957
   websiteLatestMessage:
     text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
       Click here!</a>
-  websiteLatestMessageTimestamp: 1779263066
+  websiteLatestMessageTimestamp: 1780904957
   websiteLatestVideos:
     videos:
-    - youTubeId: ywDrlnC-Y3M
-      title: The BEST Unity tool got EVEN BETTER! (and FREE!)
-    - youTubeId: JE8LhN-kBtY
-      title: Programming Basics (C# Tutorial for Beginners)
-    - youTubeId: RXjO0W5iF_E
-      title: TOP 10 FREE NEW Assets MAY 2026!
-    - youTubeId: Fb5d_46JfVI
-      title: What are Unity Templates?
-  websiteLatestVideosTimestamp: 1779263066
+    - youTubeId: NZfIxeK463o
+      title: Steam update just DESTROYED indie devs?!
+    - youTubeId: AuT-paQSAHU
+      title: NEW HOTTEST Steam Game Genres Revealed!
+    - youTubeId: 7s7rmNeo8Wo
+      title: Getting Started with Unity AI!
+    - youTubeId: PrTIDnZIlDM
+      title: What are Variables? (C# Basics for Beginners)
+  websiteLatestVideosTimestamp: 1780904957

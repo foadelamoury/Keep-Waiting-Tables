@@ -151,6 +151,37 @@ Transform:
   - {fileID: 1146909586}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &195707007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 195707008}
+  m_Layer: 0
+  m_Name: ------------Ingredients--------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &195707008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195707007}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +918,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 868294743}
     m_Modifications:
+    - target: {fileID: -3367920933095517879, guid: 3520b032024b2b6488675d2ee04748f8, type: 3}
+      propertyPath: kitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: df06bbc31c0fc8343bd00c7cdfc89c04, type: 2}
     - target: {fileID: 6103300446448732585, guid: 3520b032024b2b6488675d2ee04748f8, type: 3}
       propertyPath: m_Name
       value: ClearCounter (1)
@@ -949,6 +984,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 868294743}
     m_Modifications:
+    - target: {fileID: -3367920933095517879, guid: 3520b032024b2b6488675d2ee04748f8, type: 3}
+      propertyPath: kitchenObjectSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 2d123c9cdd295ed43a417e2f168f810c, type: 2}
     - target: {fileID: 6103300446448732585, guid: 3520b032024b2b6488675d2ee04748f8, type: 3}
       propertyPath: m_Name
       value: ClearCounter
@@ -1009,3 +1048,4 @@ SceneRoots:
   - {fileID: 1590981108}
   - {fileID: 132584129}
   - {fileID: 868294743}
+  - {fileID: 195707008}
