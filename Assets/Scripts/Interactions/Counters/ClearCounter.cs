@@ -1,41 +1,40 @@
 using UnityEngine;
 
-public class ClearCounter : MonoBehaviour
+public class ClearCounter : MonoBehaviour, IKitchenObjectParent
 {
     [SerializeField] KitchenObjectSO kitchenObjectSO;
-
     [SerializeField] Transform counterTopPoint;
-
     [SerializeField] ClearCounter secondClearCounter;
-
     [SerializeField] bool testing;
 
-    KitchenObjects kitchenObject;
+    // Change this variable type to match what it's holding
+    private KitchenObjects kitchenObject;
 
-    private void Update()
+    // Update this method signature and implementation
+    public void Interact(PlayerController playerController) 
     {
-        if (testing && Input.GetKeyDown(KeyCode.T))
+        if (!HasKitchenObject()) 
         {
-            if (kitchenObject != null)
+            if (playerController.HasKitchenObject()) 
             {
-
-                kitchenObject.ClearCounter = secondClearCounter;
+                playerController.GetKitchenObject().SetKitchenObjectParent(this);
+            } 
+            else 
+            {
+                if (kitchenObjectSO != null) 
+                {
+                    Transform kitchenObjectClone = Instantiate(kitchenObjectSO.prefab, counterTopPoint);
+                    kitchenObjectClone.GetComponent<KitchenObjects>().SetKitchenObjectParent(this);
+                }
+            }
+        } 
+        else 
+        {
+            if (!playerController.HasKitchenObject()) 
+            {
+                GetKitchenObject().SetKitchenObjectParent(playerController);
             }
         }
-    }
-
-    public void Interact()
-    {
-        if (kitchenObjectSO == null)
-        {
-            Transform kitchenObjectClone = Instantiate(kitchenObjectSO.prefab, counterTopPoint);
-
-            kitchenObjectClone.GetComponent<KitchenObjects>().ClearCounter = this;
-
-
-        }
-
-
     }
 
     public Transform GetKitchenObjectFollowTransform()
@@ -52,6 +51,7 @@ public class ClearCounter : MonoBehaviour
     {
         return kitchenObject;
     }
+
     public void ClearKitchenObject()
     {
         kitchenObject = null;
@@ -61,6 +61,4 @@ public class ClearCounter : MonoBehaviour
     {
         return kitchenObject != null;
     }
-
-
 }

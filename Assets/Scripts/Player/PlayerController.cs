@@ -1,11 +1,15 @@
 using System;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour , IKitchenObjectParent
 {
     public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
 
     public static PlayerController Instance { get; private set; }
+
+    [SerializeField] Transform kitchenObjectHoldPoint;
+    
+    KitchenObjects kitchenObject;
 
     void Awake()
     {
@@ -45,12 +49,8 @@ public class PlayerController : MonoBehaviour
     {
         if (selectedCounter != null)
         {
-            selectedCounter.Interact();
+            selectedCounter.Interact(this);
         }
-
-
-
-
     }
 
     private void Update()
@@ -160,5 +160,27 @@ public class PlayerController : MonoBehaviour
         OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs { selectedCounter = this.selectedCounter });
     }
 
+    public Transform GetKitchenObjectFollowTransform()
+    {
+        return kitchenObjectHoldPoint;
+    }
 
+    public void SetKitchenObject(KitchenObjects kitchenObject)
+    {
+        this.kitchenObject = kitchenObject;  }
+
+    public KitchenObjects GetKitchenObject()
+    {
+        return kitchenObject;
+    }
+
+    public void ClearKitchenObject()
+    {
+        kitchenObject = null;
+    }
+
+    public bool HasKitchenObject()
+    {
+        return kitchenObject != null;
+    }
 }
