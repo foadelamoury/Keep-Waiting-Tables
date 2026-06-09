@@ -976,6 +976,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6787806438970897859, guid: 3520b032024b2b6488675d2ee04748f8, type: 3}
   m_PrefabInstance: {fileID: 1876039654}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2045080256 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -3367920933095517879, guid: 3520b032024b2b6488675d2ee04748f8, type: 3}
+  m_PrefabInstance: {fileID: 1876039654}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ba8c4c8441d394aab39e506d91aedb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearCounter
 --- !u!1001 &1302109339948506207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -985,9 +996,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 868294743}
     m_Modifications:
     - target: {fileID: -3367920933095517879, guid: 3520b032024b2b6488675d2ee04748f8, type: 3}
+      propertyPath: testing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3367920933095517879, guid: 3520b032024b2b6488675d2ee04748f8, type: 3}
       propertyPath: kitchenObjectSO
       value: 
       objectReference: {fileID: 11400000, guid: 2d123c9cdd295ed43a417e2f168f810c, type: 2}
+    - target: {fileID: -3367920933095517879, guid: 3520b032024b2b6488675d2ee04748f8, type: 3}
+      propertyPath: secondClearCounter
+      value: 
+      objectReference: {fileID: 2045080256}
     - target: {fileID: 6103300446448732585, guid: 3520b032024b2b6488675d2ee04748f8, type: 3}
       propertyPath: m_Name
       value: ClearCounter
