@@ -2,15 +2,29 @@ using UnityEngine;
 
 public class ContainerCounter : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Interact(PlayerController playerController)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (!HasKitchenObject())
+        {
+            if (playerController.HasKitchenObject())
+            {
+                playerController.GetKitchenObject().SetKitchenObjectParent(this);
+            }
+            else
+            {
+                if (kitchenObjectSO != null)
+                {
+                    Transform kitchenObjectClone = Instantiate(kitchenObjectSO.prefab, counterTopPoint);
+                    kitchenObjectClone.GetComponent<KitchenObjects>().SetKitchenObjectParent(this);
+                }
+            }
+        }
+        else
+        {
+            if (!playerController.HasKitchenObject())
+            {
+                GetKitchenObject().SetKitchenObjectParent(playerController);
+            }
+        }
     }
 }
