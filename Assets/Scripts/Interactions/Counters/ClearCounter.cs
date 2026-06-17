@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ClearCounter : MonoBehaviour, IKitchenObjectParent
+public class ClearCounter : BaseCounter, IKitchenObjectParent
 {
     [SerializeField] KitchenObjectSO kitchenObjectSO;
     [SerializeField] Transform counterTopPoint;
@@ -11,7 +11,7 @@ public class ClearCounter : MonoBehaviour, IKitchenObjectParent
     private KitchenObjects kitchenObject;
 
     // Update this method signature and implementation
-    public void Interact(PlayerController playerController) 
+    public override void Interact(PlayerController playerController) 
     {
         if (!HasKitchenObject()) 
         {
