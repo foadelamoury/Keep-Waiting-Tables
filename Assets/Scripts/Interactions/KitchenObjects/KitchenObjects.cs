@@ -13,7 +13,7 @@ public class KitchenObjects : MonoBehaviour
         {
             this.kitchenObjectParent.ClearKitchenObject();
         }
-        
+
         this.kitchenObjectParent = kitchenObjectParent;
 
         if (kitchenObjectParent.HasKitchenObject())

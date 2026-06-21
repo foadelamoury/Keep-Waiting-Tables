@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Diagnostics; // Required for the Conditional attribute
+using UnityEngine;
 
 public static class Logging
 {

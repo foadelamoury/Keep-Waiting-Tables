@@ -5,7 +5,7 @@ public class GameInput : MonoBehaviour
 {
     public event EventHandler OnInteractAction;
     private PlayerInputActions playerInputActions;
-    
+
 
     void Awake()
     {
@@ -17,15 +17,15 @@ public class GameInput : MonoBehaviour
 
     private void Interacting(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        
-        OnInteractAction?.Invoke(this,EventArgs.Empty);
+
+        OnInteractAction?.Invoke(this, EventArgs.Empty);
     }
 
     public Vector2 GetMovementVectorNormalized()
     {
         Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
-        
-        
+
+
 
 
         return PlayerInput(inputVector);

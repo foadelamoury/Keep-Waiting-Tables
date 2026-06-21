@@ -1,8 +1,10 @@
 using UnityEngine;
 
-namespace CodeMonkey.FreeWindow {
+namespace CodeMonkey.FreeWindow
+{
 
-    public class CodeMonkeyFreeTesting : MonoBehaviour {
+    public class CodeMonkeyFreeTesting : MonoBehaviour
+    {
 
 
     }

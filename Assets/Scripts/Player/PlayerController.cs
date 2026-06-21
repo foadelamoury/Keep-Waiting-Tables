@@ -1,26 +1,26 @@
 using System;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour , IKitchenObjectParent
+public class PlayerController : MonoBehaviour, IKitchenObjectParent
 {
     public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
 
     public static PlayerController Instance { get; private set; }
 
     [SerializeField] Transform kitchenObjectHoldPoint;
-    
+
     KitchenObjects kitchenObject;
 
     void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject); 
-            return;             
+            Destroy(gameObject);
+            return;
         }
 
         Instance = this;
-        
+
     }
 
     public class OnSelectedCounterChangedEventArgs : EventArgs
@@ -78,8 +78,9 @@ public class PlayerController : MonoBehaviour , IKitchenObjectParent
         }
 
         float interactDistance = 2f;
+        Vector3 raycastOrigin = transform.position + Vector3.up * 0.5f;
 
-        if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, countersLayerMask))
+        if (Physics.Raycast(raycastOrigin, lastInteractDir, out RaycastHit raycastHit, interactDistance, countersLayerMask))
         {
             if (raycastHit.transform.TryGetComponent(out BaseCounter baseCounter))
             {
@@ -167,7 +168,8 @@ public class PlayerController : MonoBehaviour , IKitchenObjectParent
 
     public void SetKitchenObject(KitchenObjects kitchenObject)
     {
-        this.kitchenObject = kitchenObject;  }
+        this.kitchenObject = kitchenObject;
+    }
 
     public KitchenObjects GetKitchenObject()
     {
