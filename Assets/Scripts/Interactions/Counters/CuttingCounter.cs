@@ -1,10 +1,11 @@
-public class ClearCounter : BaseCounter
+using UnityEngine;
+
+public class CuttingCounter : BaseCounter
 {
-
-
 
     public override void Interact(PlayerController playerController)
     {
+
         if (!HasKitchenObject())
         {
             if (playerController.HasKitchenObject())
@@ -26,6 +27,10 @@ public class ClearCounter : BaseCounter
                 GetKitchenObject().SetKitchenObjectParent(playerController);
             }
         }
-
     }
+
+
+
+
+
 }
